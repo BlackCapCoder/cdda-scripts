@@ -1,0 +1,5 @@
+{
+  "type": "MOD_INFO",
+  "id": "user:default",
+  "dependencies": [ "dda", "package_bionic_professions", "no_npc_food", "speedydex", "stats_through_kills", "StatsThroughSkills", "alt_map_key", "aftershock", "blazeindustries", "crt_expansion", "magiclysm", "MMA", "Cata++", "MST_Extra" ]
+}

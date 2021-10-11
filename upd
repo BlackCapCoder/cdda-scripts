@@ -1,0 +1,22 @@
+#!/bin/bash
+
+VERSION=$(gh release list -R 'CleverRaven/Cataclysm-DDA' -L 1 | awk '{print $6}')
+gh release download -R 'CleverRaven/Cataclysm-DDA' "$VERSION" -p 'cdda-linux-tiles-*'
+tar -xf *.tar.gz
+rm *.tar.gz
+rm game -rf
+mv cataclysmdda* game
+(
+  cd game
+  ln -s ../config .
+  ln -s ../templates .
+  ln -s ../sound .
+  (
+    cd gfx
+    ln -s ../../UndeadPeopleTileset .
+  )
+  (
+    cd data/mods
+    ln -s ../../../mods/* .
+  )
+)
